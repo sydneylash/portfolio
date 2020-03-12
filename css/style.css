@@ -33,7 +33,7 @@ h1.sydney{
 }
 
 nav a:link, nav a:visited {
-  background-color: grey;
+  background-color: #4E595C;
   color: white;
   padding: 14px 25px;
   text-align: center;
@@ -53,6 +53,7 @@ h3{
 
 #here{
   background-color: black;
+  text-decoration: underline;
 }
 
 
@@ -107,20 +108,25 @@ footer{
 
 
 /* ABOUT PAGE */
-main.about{
-  padding-top: 10px;
-  position: absolute;
+#aboutme{
+  color: black;
+  font-size: 30px;
 }
 
+#aboutmetxt{
+  font-size: 15px;
+}
 
 .parallax {
   background-image: url("../images/download.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Parallax effect */
-  background-position: center;  /* Parallax effect *//* Parallax effect */
-  background-size: cover;       /* Parallax effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   color: black;
-  height: 750px;
+  height: 200px;
+  padding: 40px;
+
   background-color: black;
 }
 
@@ -129,13 +135,15 @@ main.about{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
+  grid-column-gap: 10px;
 }
 
 #me img{
-  height: 300px;
-  width: 60%;
+  height: 200px;
   grid-column: 1/1;
-  justify-self: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   border: 2px solid black;
 }
 
@@ -244,7 +252,7 @@ input[type=text], select, textarea {
 }
 
 input[type=submit]{
-  background-color: gray;
+  background-color: #4E595C;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -293,7 +301,8 @@ input[type=submit]:hover {
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -301,7 +310,7 @@ input[type=submit]:hover {
   position: absolute;
   width: 100%;
   height: 200px;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -314,6 +323,10 @@ input[type=submit]:hover {
   background-color: dodgerblue;
   color: black;
   transform: rotateY(180deg);
+}
+
+.flip-card-back a{
+  color: #200052;
 }
 /* PFIZER PAGE */
 .internship{
@@ -434,24 +447,23 @@ input[type=submit]:hover {
 }
 
 .persona{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 5px;
+  display: inline-block;
 }
 
 #personaone{
-  height: 500px;
-  width: 500px;
+  height: 360px;
+  width: 360px;
 }
 
 #personatwo{
-  height: 500px;
-  width: 500px;
+  height: 360px;
+  width: 360px;
 }
 
 #personathree{
-  height: 500px;
-  width: 500px;
+  height: 360px;
+  width: 360px;
+
 }
 
 .stories{
@@ -519,14 +531,23 @@ input[type=submit]:hover {
     flex-flow: row nowrap;
   }
 
+
+  h2, h3{
+    text-align: left;
+  }
   #me{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
   }
 
-  .parallax{
-    height: 550px;
+  #glwschead{
+    text-align: center;
+    line-height: 2;
+  }
+
+  #exphead{
+    text-align: center;
   }
 
   .gallery{
@@ -650,15 +671,7 @@ input[type=submit]:hover {
     font-size: 30px;
   }
 
-  .glwsc #details h2, .glwsc #details h3{
-    display: flex;
-    flex-flow: row wrap;
-    text-align: left;
-    margin-bottom:5px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: underline;
-  }
+
 
   .research{
     display: grid;
@@ -728,32 +741,6 @@ input[type=submit]:hover {
     margin-right: 100px;
   }
 
-  .persona{
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 400px;
-    grid-gap: 5px;
-  }
-
-  #personaone{
-    grid-column: 1;
-    grid-row: 1;
-    height: 360px;
-    width: 360px;
-  }
-
-  #personatwo{
-    grid-column: 2;
-    grid-row: 1;
-    height: 360px;
-    width: 360px;
-  }
-
-  #personathree{
-    grid-column: 3;
-    grid-row: 1;
-    height: 360px;
-    width: 360px;
-  }
 
   .stories{
     grid-template-columns: 1fr 1fr;
@@ -852,13 +839,9 @@ input[type=submit]:hover {
 
 
 @media screen and (min-width: 768px){
-  .parallax{
-    height: 650px;
-  }
 
-  #me img{
-    height: 400px;
-    width: 50%;
+  #profile{
+    height: 200px;
   }
 
   .container{
@@ -914,16 +897,6 @@ input[type=submit]:hover {
     font-size: 22px;
   }
 
-  .glwsc #details h2, .glwsc #details h3{
-    display: flex;
-    flex-flow: row wrap;
-    text-align: left;
-    margin-bottom:5px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
   .research{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -962,45 +935,6 @@ input[type=submit]:hover {
     width: 300px;
   }
 
-  /* .finaldesign{
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 50px 400px 78px);
-  }
-
-  #reminders{
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  #sync{
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  #timeline{
-    grid-column: 1;
-    grid-row: 5;
-  }
-
-  .finaldesign h3{
-    grid-row: 1;
-    text-align: center;
-  }
-
-  .finaldesign p{
-    grid-row: 3;
-    text-align: center;
-    margin: 20px;
-  }
-  #timelinename{
-    grid-column: 1;
-    grid-row: 4;
-  }
-
-  #timelinep{
-    grid-column: 1;
-    grid-row: 6;
-  } */
 }
 
 @media screen and (prefers-reduced-motion: reduce){
